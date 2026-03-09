@@ -74,3 +74,6 @@ Replaced "gmail.com.com" domains with "gmail.com" for consistency.
 
 ## Author
 Bahizi Sebujisho Benjamin
+
+<img width="959" height="539" alt="image" src="https://github.com/user-attachments/assets/e5ad7551-b673-4777-8701-8c6c4c53c765" />
+
