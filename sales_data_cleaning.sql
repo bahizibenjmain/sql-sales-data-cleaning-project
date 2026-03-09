@@ -1,5 +1,6 @@
+-- ================
 -- CLEANING DATA 
-
+-- ================
 create table company_sales_data
 like sales_data;
 
@@ -10,7 +11,9 @@ from sales_data;
 select* 
 from company_sales_data;
 
+-- ==========================================================================================================
 -- REMOVING DUPLICATES AND  NULL VALUES (OrderID,OrderDate,ProductName,Category,Quantity,UnitPrice,TotalPrice
+-- ==========================================================================================================
 
 WITH duplicate_check as(
 select*,
@@ -37,7 +40,10 @@ WHERE CustomerID IN (
     WHERE rn > 1
 );
 
+-- ==========================================================================================================
 -- finding and cleaning  missing values
+-- ==========================================================================================================
+
 
 SELECT *
 FROM company_sales_data
@@ -58,9 +64,10 @@ select distinct Email
 from company_sales_data
 order by 1;
 
-
+-- ==========================================================================================================
 -- Cleaning inconsistent date formats
 -- CLEANING OrderDate 
+-- ==========================================================================================================
 
 SELECT OrderDate
 FROM company_sales_data;
@@ -106,7 +113,10 @@ drop CleanOrderDate;
 alter table company_sales_data
 modify column OrderDate date;
 
+-- ==========================================================================================================
 -- CLEANING productName Column
+-- ==========================================================================================================
+
 
 select distinct productname
 from company_sales_data
@@ -140,9 +150,11 @@ set TotalPrice=round(TotalPrice,1);
 select*
 from company_sales_data;
 
+-- ==========================================================================================================
 --  Creating transaction type column
-
 -- Separate Sales and Returns
+-- ==========================================================================================================
+
 
 alter table company_sales_data
 add TransactionType int;
@@ -161,7 +173,10 @@ set TransactionType= case
 select*
 from company_sales_data;
 
+---- ==========================================================================================================
 -- Standardizing email domains
+-- ==========================================================================================================
+
 
 select distinct Email
 from company_sales_data;
