@@ -49,7 +49,7 @@ Created a new column to classify:
 - No Sales
 
 ### 7. Standardize Email Domains
-Replaced gmail.com.com domains with gmail.com for consistency.
+Replaced "gmail.com.com" domains with "gmail.com" for consistency.
 
 ---
 
